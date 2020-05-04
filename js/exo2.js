@@ -50,11 +50,12 @@ const datas = [
 // // on ne peut pas réassigner une const
 // datas = 123;
 
+// version forEach
 // Objectif: je veux créer un nouveau tableau de personnages allégés
 // - je crée un tableau
 const characters = [];
 // - pour chaque valeur du tableau original
-for (const currentCharacter of datas) {
+datas.forEach(function(currentCharacter) {
   // - j'ajoute une valeur dans mon nouveau tableau
   const newCharacter = {
     // name: currentCharacter.firstname + ' ' + currentCharacter.lastname,
@@ -63,7 +64,23 @@ for (const currentCharacter of datas) {
     young: currentCharacter.age < 50,
   };
   characters.push(newCharacter);
-}
+});
+
+// version for
+// // Objectif: je veux créer un nouveau tableau de personnages allégés
+// // - je crée un tableau
+// const characters = [];
+// // - pour chaque valeur du tableau original
+// for (const currentCharacter of datas) {
+//   // - j'ajoute une valeur dans mon nouveau tableau
+//   const newCharacter = {
+//     // name: currentCharacter.firstname + ' ' + currentCharacter.lastname,
+//     name: `${currentCharacter.firstname} ${currentCharacter.lastname}`,
+//     // une opération de comparaison donne un booléen
+//     young: currentCharacter.age < 50,
+//   };
+//   characters.push(newCharacter);
+// }
 
 
 /*
