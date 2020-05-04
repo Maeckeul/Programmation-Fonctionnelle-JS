@@ -52,14 +52,19 @@ const datas = [
 
 // version map
 // map nous retourne d'office un nouveau tableau sans toucher à l'original
-const characters = datas.map(function(currentCharacter) {
-  const newCharacter = {
-    name: `${currentCharacter.firstname} ${currentCharacter.lastname}`,
-    young: currentCharacter.age < 50,
-  };
-  // map rempli le tableau qu'il construit avec les valeurs de retour de la fonction de rappel
-  return newCharacter;
-});
+// const characters = datas.map(function (currentCharacter) {
+//   const newCharacter = {
+//     name: `${currentCharacter.firstname} ${currentCharacter.lastname}`,
+//     young: currentCharacter.age < 50,
+//   };
+//   // map rempli le tableau qu'il construit avec les valeurs de retour de la fonction de rappel
+//   return newCharacter;
+// });
+
+const characters = datas.map((currentCharacter) => ({
+  name: `${currentCharacter.firstname} ${currentCharacter.lastname}`,
+  young: currentCharacter.age < 50,
+}));
 
 console.log(characters);
 
@@ -95,6 +100,52 @@ console.log(characters);
 //   characters.push(newCharacter);
 // }
 
+// ----------- A propos des fonctions fléchées
+// // on connaissait les déclarations de fonctions
+// function sum(a, b) {
+//   return a + b;
+// }
+
+// // on connaissait les expressions de fonctions
+// const sum = function(a, b) {
+//   return a + b;
+// }
+
+// // ES6 introduit les expressions de fonctions fléchées, on n'écit plus function à la place on met une grosse fleche / fat arrow / => à droite des arguments
+// const sum = (a, b) => {
+//   return a + b;
+// }
+
+// // il existe quelques possibilités :
+// // lorsqu'on a un et un seul paramètre on n'est pas obligé de l'entourer de parenthèses
+// const double = number => {
+//   return number * 2;
+// }
+
+// // si on en 0 ou 2 ou plus on DOIT mettre les parenthèses
+// const sayHello = () => {
+//   return 'coucou';
+// }
+
+// // lorsqu'on a un retour direct, sans traitement avant, on PEUT omettre les accolades et le return
+// const sum = (a, b) => a + b;
+
+// const double = number => number * 2;
+
+// const sayHello = () => 'coucou';
+
+// // cas particulier : si on retourne directement un objet avec un return implicite alors il faut entourer l'objet de parenthèses
+// const giveCharacter = () => ({
+//   name: 'Test',
+//   age: 32,
+// });
+
+// // si on a du traitement on a la pas le choix, on explicite le return
+// const sayName = () => {
+//   const name = 'Alexis';
+//   const age = 15 * 2;
+//   return name + age;
+// } 
 
 /*
  * Tests
