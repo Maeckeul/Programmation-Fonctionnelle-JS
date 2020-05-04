@@ -24,13 +24,27 @@ var items = ['Sunglasses', 'Suit', 'Business card', 'Jet ski'];
 // il me faut un pointeur vers le ul
 let ul = document.getElementById('result');
 
-// je dois parcourir le tableau
-for (let item of items) {
-    // pour chaque valeur
+// version forEach :
+let addLi = function(item) {
     // créer un li
     let li = document.createElement('li');
     // écrire la valeur courante dans le li
     li.textContent = item;
     // insérer le li dans le ul
     ul.appendChild(li);
-}
+};
+
+// on passe à forEach une définition de fonction
+items.forEach(addLi);
+
+// version for :
+// // je dois parcourir le tableau
+// for (let item of items) {
+//     // pour chaque valeur
+//     // créer un li
+//     let li = document.createElement('li');
+//     // écrire la valeur courante dans le li
+//     li.textContent = item;
+//     // insérer le li dans le ul
+//     ul.appendChild(li);
+// }
