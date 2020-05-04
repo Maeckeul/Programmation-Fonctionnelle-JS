@@ -60,9 +60,20 @@ var users = [
   },
 ];
 
-var allowedUsers = users;
 
+// la méthode des Array filter ressemble beaucoup à forEach et map dans le sens où on lui passe en argument une fonction de rappel prenant la valeur courant en paramètre
+// filter retourne un nouveau tableau avec seulement certaines des valeurs du tableau d'origine
+// le fait de garder ou non la valeur sera déterminer par le retour de la fonction de rappel, si on retourne true, on garde, si on retourne false on ne garde pas
 
+const allowedUsers = users.filter(function(user) {
+  // pour passer il faut 
+  // SOIT avoir +500€
+  // SOIT avoir +20€ ET +18ans
+  return (user.cash > 500) || (user.cash > 20 && user.age >= 18);
+});
+
+// // en version fléchée, avec return implicite :
+// const allowedUsers = users.filter((user) => user.age> 18 && user.cash >= 20 || user.cash >= 500);
 
 
 

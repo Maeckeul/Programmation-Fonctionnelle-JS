@@ -24,7 +24,9 @@ const items = document.querySelectorAll('.box');
 // je parcours mes items avec forEach (querySelectorAll retourne un NodeList possédant la méthode forEach)
 
 items.forEach((item, index) => {
+    // console.log(`je créer un décompte de ${1000 * index}ms`);
     setTimeout(() => {
+        // console.log(`fin du décompte de ${1000 * index}ms`);
         // item représente la valeur courante, ici un element du DOM
         // on peut modifier ses styles via la propriété style
         item.style.display = 'block';
