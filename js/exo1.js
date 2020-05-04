@@ -18,3 +18,19 @@ Notions
 */
 
 var items = ['Sunglasses', 'Suit', 'Business card', 'Jet ski'];
+
+// objectif: insérer un li dans le ul qui a l'id result pour chaque valeur du tableau
+
+// il me faut un pointeur vers le ul
+let ul = document.getElementById('result');
+
+// je dois parcourir le tableau
+for (let item of items) {
+    // pour chaque valeur
+    // créer un li
+    let li = document.createElement('li');
+    // écrire la valeur courante dans le li
+    li.textContent = item;
+    // insérer le li dans le ul
+    ul.appendChild(li);
+}
