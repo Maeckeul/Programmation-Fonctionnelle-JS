@@ -41,7 +41,20 @@ var animaux = [
   }
 ];
 
+// on accède à une valeur dans un tableau par son index
+// const canard = animaux[0];
+// const chat = animaux[1];
+// const lion = animaux[2];
+// const mouton = animaux[3];
 
+// la MÊME chose peut s'écrire différement avec la décomposition/destructuring
+const [canard, chat, lion, mouton] = animaux;
+//    [  0   ,   1 ,  2,  ,   3  ]
+
+// ce qui compte dans un TABLEAU, c'est l'ORDRE, ici la on va voir une const canard qui aura la première valeur du tableau animaux, ici le nom est totalement libre, je nomme mes constantes comme je veux
+
+// rien ne nous oblige à décomposer tout le tableau
+const [premierElement, secondElement] = animaux;
 
 
 
