@@ -39,29 +39,53 @@ var users = [
   },
 ];
 
+// une fonction peut retourner une fonction
+// ainsi à l'execution la valeur récupérée sera une définition de fonction
 function sayHelloToUser(user) {
-
+  return function(lang) {
+    // une fonction mémorise son contexte, ici la fonction retournée se souvient de la valeur de user
+    if (lang === 'es') {
+      console.log(`Ola ${user.firstName}`);
+    }
+    else {
+      console.log(`Bonjour ${user.firstName}`);
+    }
+  }
 }
 
+// // ce qui donne avec décomposition et fléchée
+// const sayHelloToUser = ({ firstName, lastName }) => (lang) => {
+//   if (lang === 'es') {
+//     console.log(`Ola ${firstName}`);
+//   }
+//   else {
+//     console.log(`Bonjour ${firstName}`);
+//   }
+// };
 
 
+const sayHelloToJohn = sayHelloToUser(users[0]);
+sayHelloToJohn('es');
+sayHelloToJohn('fr');
 
 
+const sayHelloToToto = sayHelloToUser(users[1]);
+sayHelloToToto('es');
+
+sayHelloToJohn('fr');
 
 
+// /*
+//  * Tests
 
-
-/*
- * Tests
-
- */
-var result = document.getElementById('test');
-var helloJohnFr = sayHelloToUser(users[0])('fr');
-var helloTotoEs = sayHelloToUser(users[1])('es');
-if (
-  helloJohnFr === 'Bonjour John Doe'
-  && helloTotoEs === 'Ola Toto Dupont'
-) {
-  result.className = 'success';
-  result.textContent = 'Yep !';
-}
+//  */
+// var result = document.getElementById('test');
+// var helloJohnFr = sayHelloToUser(users[0])('fr');
+// var helloTotoEs = sayHelloToUser(users[1])('es');
+// if (
+//   helloJohnFr === 'Bonjour John Doe'
+//   && helloTotoEs === 'Ola Toto Dupont'
+// ) {
+//   result.className = 'success';
+//   result.textContent = 'Yep !';
+// }
