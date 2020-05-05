@@ -18,16 +18,30 @@ Notions
 
 var user = {
   country: 'France',
-  firstName: 'Pierre',
   lastName: 'Aldado',
   email: 'p.aldado@oclock.io',
   phone: '0123456789',
   login: 'paldado',
   age: '32',
+  firstName: 'Pierre',
   lang: 'fr',
 };
 
+// dans un objet on accède à une valeur par sa clé
+// l'ordre importe peu, c'est le nom de la clé qui compte
+// const name = user.firstName;
+// const login = user.login;
 
+// la MËME chose PEUT être via la destructuration/decomposition/destructuring
+// ici ce que je fais : j'assigne dans une constante login la valeur de la propriété login de l'objet user et j'assigne dans une constante name la valeur de la propriété firstName de l'objet user
+// On peut choisir le nom de notre constante à l'aide de :
+const { login, firstName: name, lastName } = user; 
+
+
+// la décomposition ne permet que d'assigner des choses
+
+// ensuite on peut manipuler ces données selon nos besoins
+// const fullName = `${name} ${lastName}`;
 
 
 
