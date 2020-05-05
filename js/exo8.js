@@ -25,3 +25,27 @@ var user = {
   lang: 'fr',
 };
 
+// décomposition en 2 temps
+function sayHelloToUser(people) {
+  const { firstName, lastName } = people;
+  return `Salut ${firstName} ${lastName}`;
+}
+
+// décomposition en 1 temps, on destructure directement l'objet reçu paramètre reçu sans même prendre le temps de le ranger dans une variable intermédiaire
+function sayHelloToUser({ firstName, lastName }) {
+  return `Salut ${firstName} ${lastName}`;
+}
+
+
+const message = sayHelloToUser(user);
+console.log(message);
+
+console.log(sayHelloToUser({
+  firstName: 'Bernard',
+  lastName: 'Dupont',
+  email: 'nanard@toto.com',
+  adress: [
+    '12 rue des fleurs',
+    'Paris',
+  ]
+}));
