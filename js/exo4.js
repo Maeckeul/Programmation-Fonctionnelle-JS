@@ -65,23 +65,22 @@ var users = [
 // filter retourne un nouveau tableau avec seulement certaines des valeurs du tableau d'origine
 // le fait de garder ou non la valeur sera déterminer par le retour de la fonction de rappel, si on retourne true, on garde, si on retourne false on ne garde pas
 
-const allowedUsers = users.filter(function(user) {
-  // pour passer il faut 
-  // SOIT avoir +500€
-  // SOIT avoir +20€ ET +18ans
-  return (user.cash > 500) || (user.cash > 20 && user.age >= 18);
-});
+// const allowedUsers = users.filter(function(user) {
+  // pour passer
+  // SOIT avoir +500e
+  // SOIT avoir +20e ET 18 ans
+//  const canPass = (user.cash > 500) || (user.cash > 20 && user.age >= 18); 
+//  return canPass;
+// });
+
+// console.log(allowedUsers);
 
 // // en version fléchée, avec return implicite :
 // const allowedUsers = users.filter((user) => user.age> 18 && user.cash >= 20 || user.cash >= 500);
 
-
-
-
-
-
-
-
+const allowedUsers = users.filter((user) =>
+  user.cash > 500 || user.cash > 20 && user.age >= 18
+  );
 /*
  * Tests
  */
