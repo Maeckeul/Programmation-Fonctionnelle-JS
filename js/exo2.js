@@ -47,57 +47,46 @@ const datas = [
   },
 ];
 
-// // on ne peut pas réassigner une const
-// datas = 123;
+const characters = []; 
 
-// je veux créer un nouveau tableau de personnage allégé
-// je crée un nouveau tableau
-// const characters = [];
-// pour chaque valeur du tableau original 
+// Methode map
+let newCharacter = function(currentCharacter) {
+  const tab = {
+    name: `${currentCharacter.firstname} ${currentCharacter.lastname}`,
+    young: currentCharacter.age < 50
+  }
+  characters.push(tab);
+}
+datas.map(newCharacter);
 
-// version for: 
+// // methode forEach
+// let newCharacter = function(character) {
+//   const tab = {
+//     name: `${character.firstname} ${character.lastname}`,
+//     young: character.age < 50
+//   }
+//   characters.push(tab);
+// }
+
+// datas.forEach(newCharacter);
+// // Version for
 // for(const currentCharacter of datas) {
-//  console.log(currentCharacter);
-// j'ajoute une valeur dans mon nouveau tableau
-
-// const newCharacter = {
-//  name: `${currentCharacter.firstname} ${currentCharacter.lastname}`,
-//  young: currentCharacter.age < 50,
-//  };
-
-//  characters.push(newCharacter);
-//}
+//   // console.log(currentCharacter);
+//   let isYoung;
+//   if(currentCharacter.age > 50) {
+//     isYoung = false;
+//   }
+//   else {
+//     isYoung = true;
+//   }
+//   const newCharacter = {
+//     name: `${currentCharacter.firstname} ${currentCharacter.lastname}`,
+//     young: currentCharacter.age < 50
+//   };
+//   characters.push(newCharacter);
+// }
 
 // console.log(characters);
-
-//version forEach:
-
-// const characters = []; 
-
-// datas.forEach(function(currentCharacter) {
-//  const newCharacter = {
-//    name: `${currentCharacter.firstname} ${currentCharacter.lastname}`,
-//    young: currentCharacter.age < 50,
-//  };
-//  characters.push(newCharacter);
-//});
-
-// version map : 
-
-const characters = datas.map(function(currentCharacter) {
-  console.log(currentCharacter);
-  const newCharacter = {
-    name: `${currentCharacter.firstname} ${currentCharacter.lastname}`,
-    young: currentCharacter.age < 50,
-  };
-  return newCharacter;
-});
-
-console.log(characters);
-
-
-
-
 /*
  * Tests
  */

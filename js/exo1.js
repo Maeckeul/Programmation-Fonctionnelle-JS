@@ -20,24 +20,18 @@ Notions
 var items = ['Sunglasses', 'Suit', 'Business card', 'Jet ski'];
 
 let ul = document.getElementById('result');
-console.log(ul);
 
 let addLi = function(item) {
     let li = document.createElement('li');
     li.textContent = item;
     ul.appendChild(li);
-}
+};
 
 items.forEach(addLi);
 
-// version for :
-// // je dois parcourir le tableau
-// for (let item of items) {
-//     // pour chaque valeur
-//     // créer un li
+// version for : 
+// for(let item of items) {
 //     let li = document.createElement('li');
-//     // écrire la valeur courante dans le li
 //     li.textContent = item;
-//     // insérer le li dans le ul
 //     ul.appendChild(li);
 // }
