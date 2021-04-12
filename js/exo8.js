@@ -32,9 +32,11 @@ var user = {
 // }
 
 // Décompo' en 1 tps
-function sayHelloToUser({firstName, lastName}) {
-  return `Salut ${firstName} ${lastName}`;
-}
+// function sayHelloToUser({firstName, lastName}) {
+//   return `Salut ${firstName} ${lastName}`;
+// }
+
+const sayHelloToUser = ({firstName, lastName}) => `Salut ${firstName} ${lastName}`;
 
 const message = sayHelloToUser(user);
 console.log(message);

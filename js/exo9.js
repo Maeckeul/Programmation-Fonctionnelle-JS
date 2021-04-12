@@ -44,11 +44,11 @@ var users = [
 function sayHelloToUser(user) {
   return function(lang) {
     // une fonction mémorise son contexte, ici la fonction retournée se souvient de la valeur de user
-    if (lang === 'es') {
-      console.log(`Ola ${user.firstName}`);
+    if (lang === 'fr') {
+      console.log(`Bonjour ${user.firstName} ${user.lastName}`);
     }
     else {
-      console.log(`Bonjour ${user.firstName}`);
+      console.log(`Ola ${user.firstName} ${user.lastName}`);
     }
   }
 }
@@ -65,27 +65,24 @@ function sayHelloToUser(user) {
 
 
 const sayHelloToJohn = sayHelloToUser(users[0]);
-sayHelloToJohn('es');
 sayHelloToJohn('fr');
 
 
 const sayHelloToToto = sayHelloToUser(users[1]);
 sayHelloToToto('es');
 
-sayHelloToJohn('fr');
 
+/*
+ * Tests
 
-// /*
-//  * Tests
-
-//  */
-// var result = document.getElementById('test');
-// var helloJohnFr = sayHelloToUser(users[0])('fr');
-// var helloTotoEs = sayHelloToUser(users[1])('es');
-// if (
-//   helloJohnFr === 'Bonjour John Doe'
-//   && helloTotoEs === 'Ola Toto Dupont'
-// ) {
-//   result.className = 'success';
-//   result.textContent = 'Yep !';
-// }
+ */
+var result = document.getElementById('test');
+var helloJohnFr = sayHelloToUser(users[0])('fr');
+var helloTotoEs = sayHelloToUser(users[1])('es');
+if (
+  helloJohnFr === 'Bonjour John Doe'
+  && helloTotoEs === 'Ola Toto Dupont'
+) {
+  result.className = 'success';
+  result.textContent = 'Yep !';
+}
